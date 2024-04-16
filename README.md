@@ -44,9 +44,9 @@ MOS管中有一项**Rg=1.6R**；
 栅极电阻两个6.2并联成3.1，其余不变，上升时间缩短为**66ns**，理论计算时间约为**43ns**；  
 ![3.1R上升时间.jpg](https://dontfreeze-picgo.oss-cn-hangzhou.aliyuncs.com/PicGo/开关电源/MOS选型/3.1R上升时间.jpg)
 栅极电流参考
-![3.1R两端电压.jpg](https://dontfreeze-picgo.oss-cn-hangzhou.aliyuncs.com/PicGo/开关电源/MOS选型/3.1R两端电压.jpg)
+![3.1R两端电压.jpg](https://dontfreeze-picgo.oss-cn-hangzhou.aliyuncs.com/PicGo/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90/MOS%E9%80%89%E5%9E%8B/3.1R%E4%B8%A4%E7%AB%AF%E7%94%B5%E5%8E%8B.jpg)
 
 上管栅极电阻0R，驱动电压9.2V，上升时间为**52ns**（这个是栅极驱动器可以驱动MOS的最快速度，但是可能栅极驱动器会比较烫），理论计算时间约为**38ns**；  
-![上管上升时间.jpg](https://dontfreeze-picgo.oss-cn-hangzhou.aliyuncs.com/PicGo/开关电源/MOS选型/上管上升时间.jpg)
+![上管上升时间.jpg](https://dontfreeze-picgo.oss-cn-hangzhou.aliyuncs.com/PicGo/%E5%BC%80%E5%85%B3%E7%94%B5%E6%BA%90/MOS%E9%80%89%E5%9E%8B/%E4%B8%8A%E7%AE%A1%E4%B8%8A%E5%8D%87%E6%97%B6%E9%97%B4.jpg)
 
 &emsp;&emsp;总结：可以看到栅极上的电阻大小对理论计算结果的影响比实际要小，至于为啥，我也不知道。我猜测：可能是因为栅极上电阻的增加会导致栅极寄生电荷的充电受到显著的影响，而理论则是以理想模型的形式去计算的，忽略了各种寄生参数的影响。通过外部串联在栅极上的电阻两端的电压波形可得出此时流经的电流大小，看波形变化可以知道，他的电流在10ns左右达到最大值，接下来就快速下降，且越来越慢，这符合电容的实际充电过程；而理论计算我想大概他是将充电过冲简化成了以最大电流来持续充电的形式，或许可以通过计算电容的充电时间常数以获得更加精确的时间。不过这既然是粗略选型估计，**不妨我们直接将计算出来的结果留出50%以上的冗余，来避免因计算过程和寄生参数产生的误差影响**。
